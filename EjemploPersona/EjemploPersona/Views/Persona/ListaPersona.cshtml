@@ -1,0 +1,54 @@
+﻿@model IEnumerable<EjemploPersona.Models.Persona>
+@{
+    ViewBag.Title = "Lista de Persona";
+}
+
+<h2>Listado de Personas cargados en la BD</h2>
+
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th class="text-center">
+                        ID
+                    </th>
+                    <th class="text-center">
+                        Nombre
+                    </th>
+                    <th class="text-center">
+                        Apellido
+                    </th>
+                    <th class="text-center">
+                        Dni
+                    </th>
+                    <th class="text-center">
+                        Edad
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var persona in Model)
+                {
+                <tr class="text-center">
+                    <td>
+                        @persona.Id
+                    </td>
+                    <td>
+                        @persona.Nombre
+                    </td>
+                    <td>
+                        @persona.Apellido
+                    </td>
+                    <td>
+                        @persona.Dni
+                    </td>
+                    <td>
+                        @persona.Edad
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
