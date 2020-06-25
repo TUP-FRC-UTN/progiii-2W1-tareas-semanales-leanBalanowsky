@@ -1,0 +1,95 @@
+﻿@model EjemploPersona.ViewModel.Reportes.reporteGralVM
+@{
+    ViewBag.Title = "Informe general";
+}
+
+<h2>Reporte info general</h2>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="col-lg-12">
+            <div>
+                <h3>
+                    Personas por sexo
+                </h3>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th class="text-center">
+                        Sexo
+                    </th>
+                    <th class="text-center">
+                        Cantidad
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sexo in Model.ListaSexo)
+                {
+                    <tr class="text-center">
+                        <td>
+                            @sexo.Nombre
+                        </td>
+                        <td>
+                            @sexo.Cantidad
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-lg-6">
+        <div class="col-lg-12">
+            <div>
+                <h3>
+                    Lista de personas
+                </h3>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th class="text-center">
+                        Nombre
+                    </th>
+                    <th class="text-center">
+                        Apellido
+                    </th>
+                    <th class="text-center">
+                        Dni
+                    </th>
+                    <th class="text-center">
+                        Edad
+                    </th>
+                    <th class="text-center">
+                        Sexo
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var persona in Model.ListaPersonas)
+                {
+                <tr class="text-center">
+                    <td>
+                        @persona.Nombre
+                    </td>
+                    <td>
+                        @persona.Apellido
+                    </td>
+                    <td>
+                        @persona.Dni
+                    </td>
+                    <td>
+                        @persona.Edad
+                    </td>
+                    <td>
+                        @persona.NombreSexo
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
